@@ -122,7 +122,38 @@ This command would create a namespace `sock-shop` and deploy the microservices o
 
 ![running-pods](../Socks-Shop/img/pods.png)
 
+# Step 4:
+### Serve the application front-end using NGINX Ingress Controller
+
+#### Deploy an Ingress controller:
+
+There are various ingress controllers but we will be using the NGINX Ingress Controller for this project. Run the command below to deploy the NGINX Ingress Controller:
+
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+
+![ingress-controller-deploy](../Socks-Shop/img/nginx-ingress-contrl.png)
+
+#### Create and apply an Ingress resource file
+
+Next, create an Ingress resource that routes traffic to your front-end service.
+
+    kubectl apply -f ingress.yml
+
+![apply-ingress-resource-file](../Socks-Shop/img/ingress-resource.png)
+
+#### Check for the address of the Ingress load balancer using the command below:
+
+    kubectl get ing
+
+![ingress-LB-address](../Socks-Shop/img/ingress-LB-address.png)
     
+#### Check for the ip address of the public address of the ingress load balancer using:
+
+    nslookup <ADDRESS copied from above>
+
+![ingress-LB-nslookup](../Socks-Shop/img/ingress-nslookup.png)
+
+#### Map the DNS to the hostname
 
 
 
