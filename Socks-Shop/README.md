@@ -106,17 +106,17 @@ The aim of this project is to set up the Socks Shop application, a demonstration
 
 This command would create a namespace `sock-shop` and deploy the microservices on the cluster. You can confirm the pods by running the following command:
 
-`First switch from the default namespace to the sock-hop namespace where the microservices are deployed.`
+##### First switch from the default namespace to the sock-hop namespace where the microservices are deployed.
 
     kubectl config set-context --current --namespace=sock-shop
 
-`Confirm that you are in the sock-shop namespace:`
+##### Confirm that you are in the sock-shop namespace:
 
-k   ubectl config view --minify | grep namespace:
+    kubectl config view --minify | grep namespace:
 
 ![namespace](../Socks-Shop/img/namespace.png)
 
-`Then check if your pods are running:`
+##### Then check if your pods are running:`
     
     kubectl get pods
 
