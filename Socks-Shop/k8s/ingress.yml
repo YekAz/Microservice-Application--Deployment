@@ -3,16 +3,16 @@ kind: Ingress
 metadata:
   name: sock-shop-ingress
   namespace: sock-shop
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: front-end
-            port:
-              number: 80
+    - host: sock-shop-app.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
