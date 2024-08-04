@@ -99,14 +99,14 @@ The aim of this project is to set up the Socks Shop application, a demonstration
     --name $(terraform output -raw cluster_name)
     ```
 
-    ![kubectl config](../Socks-Shop/img/kubectl-configuration.png)
+![kubectl config](../Socks-Shop/img/kubectl-configuration.png)
 
 ### Deploy the microservices on the cluster using the Kubernetes manifest
     ```
     kubectl create -f ../k8s/deployment.yml
     ```
 
-    ![k8s deployment](../Socks-Shop/img/k8s-deployment.png)
+![k8s deployment](../Socks-Shop/img/k8s-deployment.png)
 
 This command would create a namespace `sock-shop` and deploy the microservices on the cluster. You can confirm the pods by running the following command:
 
@@ -118,13 +118,13 @@ This command would create a namespace `sock-shop` and deploy the microservices o
 
     ```kubectl config view --minify | grep namespace:```
 
-    ![namespace](../Socks-Shop/img/namespace.png)
+![namespace](../Socks-Shop/img/namespace.png)
 
 `Then check if your pods are running:`
     
-    ```kubectl get pods```
+```kubectl get pods```
 
-    ![running-pods](../Socks-Shop/img/pods.png)
+![running-pods](../Socks-Shop/img/pods.png)
 
     
 
