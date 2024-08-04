@@ -93,18 +93,14 @@ The aim of this project is to set up the Socks Shop application, a demonstration
 # Step 3:
 
 ### Next step is to connect our kubectl to our cluster so we can have access to it on Kubernetes. Run the following command to retrieve the access credentials for your cluster and configure kubectl.
-
-    ```
+    
     aws eks --region $(terraform output -raw region) update-kubeconfig \
     --name $(terraform output -raw cluster_name)
-    ```
 
 ![kubectl config](../Socks-Shop/img/kubectl-configuration.png)
 
 ### Deploy the microservices on the cluster using the Kubernetes manifest
-    ```
     kubectl create -f ../k8s/deployment.yml
-    ```
 
 ![k8s deployment](../Socks-Shop/img/k8s-deployment.png)
 
@@ -112,17 +108,17 @@ This command would create a namespace `sock-shop` and deploy the microservices o
 
 `First switch from the default namespace to the sock-hop namespace where the microservices are deployed.`
 
-    ```kubectl config set-context --current --namespace=sock-shop```
+    kubectl config set-context --current --namespace=sock-shop
 
 `Confirm that you are in the sock-shop namespace:`
 
-    ```kubectl config view --minify | grep namespace:```
+k   ubectl config view --minify | grep namespace:
 
 ![namespace](../Socks-Shop/img/namespace.png)
 
 `Then check if your pods are running:`
     
-```kubectl get pods```
+    kubectl get pods
 
 ![running-pods](../Socks-Shop/img/pods.png)
 
