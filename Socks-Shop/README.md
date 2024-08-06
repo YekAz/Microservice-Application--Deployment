@@ -16,10 +16,12 @@ The aim of this project is to set up the Socks Shop application, a demonstration
 - All deliverables need to be deployed using an Infrastructure as Code approach.
 - Readability and maintainability (make yor application deployment clear)
 - A clear way to recreate the setup and will evaluate the project decisions based on:
-    ```Deploy pipeline
+    ```
+    Deploy pipeline
     Metrics (Alertmanager)
     Monitoring (Grafana)
-    Logging (Prometheus)```
+    Logging (Prometheus)
+    ```
 - The application should use Prometheus as a monitoring tool
 -  The application should use Ansible or Terraform as the configuration management tool
 -  The application should use anY IaaS provider
@@ -106,21 +108,28 @@ The aim of this project is to set up the Socks Shop application, a demonstration
 
 This command would create a namespace `sock-shop` and deploy the microservices on the cluster. You can confirm the pods by running the following command:
 
-##### First switch from the default namespace to the sock-hop namespace where the microservices are deployed.
+#### First switch from the default namespace to the sock-hop namespace where the microservices are deployed.
 
     kubectl config set-context --current --namespace=sock-shop
 
-##### Confirm that you are in the sock-shop namespace:
+#### Confirm that you are in the sock-shop namespace:
 
     kubectl config view --minify | grep namespace:
 
 ![namespace](../Socks-Shop/img/namespace.png)
 
-##### Then check if your pods are running:`
+#### Then check if your pods are running:
     
     kubectl get pods
 
 ![running-pods](../Socks-Shop/img/pods.png)
+
+#### Confirm that the services are also running:
+
+    kubectl get svc
+
+![svc](../Socks-Shop/img/services.png)
+
 
 # Step 4:
 ### Serve the application front-end using NGINX Ingress Controller
@@ -135,7 +144,7 @@ There are various ingress controllers but we will be using the NGINX Ingress Con
 
 #### Create and apply an Ingress resource file
 
-Next, create an Ingress resource that routes traffic to your front-end service.
+Next, create an Ingress resource that routes traffic to your front-end service. This is achieved by applying the `ingress.yml` file.
 
     kubectl apply -f ingress.yml
 
@@ -154,6 +163,16 @@ Next, create an Ingress resource that routes traffic to your front-end service.
 ![ingress-LB-nslookup](../Socks-Shop/img/ingress-nslookup.png)
 
 #### Map the DNS to the hostname
+To do this, you have to map the ip address you get from above to the hostname in your `ingress.yml` file.
+
+    sudo vim /etc/hosts
+
+![dns-mapping](../Socks-Shop/img/dns-mapping.png)
+
+#### Access the front-end of the application on your local browser
+Here, my hostname is `sock-shop-app.local` in my `ingress.yml` file.
+
+![app-front-end](../Socks-Shop/img/frontend.png)
 
 
 
