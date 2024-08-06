@@ -179,7 +179,7 @@ Here, my hostname is `sock-shop-app.local` in my `ingress.yml` file.
 
 For this project, we will be using Prometheus and Grafana for monitoring. Using Prometheus and Grafana together provides a robust solution for monitoring and observability. Prometheus excels at collecting and storing time-series data, while Grafana offers powerful visualization and alerting capabilities. Together, they help ensure our application and infrastructure are running smoothly and efficiently, providing valuable insights for troubleshooting and optimization.
 
-View the full steps to achieving the monitoring in the ![Monitoring folder README](../Socks-Shop/Monitoring/README.md).
+View the full steps to achieving the monitoring in the [Monitoring folder README](../Socks-Shop/Monitoring/README.md).
 
 But here is a view of the results of the monitoring implementation using `Prometheus` and `Grafana`
 
