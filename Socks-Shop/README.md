@@ -174,5 +174,42 @@ Here, my hostname is `sock-shop-app.local` in my `ingress.yml` file.
 
 ![app-front-end](../Socks-Shop/img/frontend.png)
 
+# Step 5:
+### Monitoring
 
+For this project, we will be using Prometheus and Grafana for monitoring. Using Prometheus and Grafana together provides a robust solution for monitoring and observability. Prometheus excels at collecting and storing time-series data, while Grafana offers powerful visualization and alerting capabilities. Together, they help ensure our application and infrastructure are running smoothly and efficiently, providing valuable insights for troubleshooting and optimization.
+
+View the full steps to achieving the monitoring in the ![Monitoring folder README](../Socks-Shop/Monitoring/README.md).
+
+But here is a view of the results of the monitoring implementation using `Prometheus` and `Grafana`
+
+### Prometheus
+
+Prometheus Deployment
+
+![prometheus-deploy](../Socks-Shop/img/prometheus-deployment.png)
+
+-------------------------------------------------------------------
+
+Prometheus Data
+
+![prometheus-data](../Socks-Shop/img/prometheus.png)
+
+### Grafana
+
+Grafana Deployment
+
+![grafana-deploy](../Socks-Shop/img/grafana-deployment.png)
+
+-------------------------------------------------------------------
+
+Grafana Dashboard showing `memory usage of all nodes`
+
+![grafana-dashboard](../Socks-Shop/img/grafana-dashboard.png)
+
+-------------------------------------------------------------------
+
+Grafana Dashboard showing `CPU usage of all nodes`
+
+![grafana-dashboard2](../Socks-Shop/img/grafana-dashboard2.png)
 
