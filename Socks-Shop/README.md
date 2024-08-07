@@ -36,6 +36,7 @@ The aim of this project is to set up the Socks Shop application, a demonstration
 - Prometheus
 - Helm
 - CICD (Github Actions)
+- Prompt Engineering (Chatgpt, Gemini, GitHub Co-Pilot)
 
 # Step 1:
 
